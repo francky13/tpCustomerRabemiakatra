@@ -25,11 +25,15 @@ public class CustomerManager {
        return query.getResultList();
     }
 
-    public Customer update(Customer customer) {
+      public Customer update(Customer customer) {
        return em.merge(customer);
     }
 
     public void persist(Customer customer) {
        em.persist(customer);
     }
+    
+    public Customer findById(int idCustomer) {  
+        return em.find(Customer.class, idCustomer);  
+      }
 }
